@@ -88,6 +88,10 @@ Everything up-to-date
 
 ```sh
 $ git pull origin master
+From https://github.com/ilvivl/lab02
+ * branch            master     -> FETCH_HEAD
+Already up to date.
+ilya@ilya-laptop:~/D
 $ git log
 ```
 
