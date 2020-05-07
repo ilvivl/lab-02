@@ -19,15 +19,15 @@ $ open https://git-scm.com
 ## Tutorial
 
 ```sh
-$ export GITHUB_USERNAME=<имя_пользователя>
-$ export GITHUB_EMAIL=<адрес_почтового_ящика>
-$ export GITHUB_TOKEN=<сгенирированный_токен>
-$ alias edit=<nano|vi|vim|subl>
+$ export GITHUB_USERNAME=ilvivl #define value GITHUB_USERNAME
+$ export GITHUB_EMAIL=vinogradov.iv@phystech.edu #define value GITHUB_EMAIL
+$ export GITHUB_TOKEN=****72cf8cdf1c17eb04436711713832c******* #define value GITHUB_TOKEN
+$ alias edit=subl #make an alias for the standard editor
 ```
 
 ```sh
 $ cd ${GITHUB_USERNAME}/workspace
-$ source scripts/activate
+$ source scripts/activate #read and execute commands
 ```
 
 ```sh
@@ -38,23 +38,42 @@ github.com:
   oauth_token: ${GITHUB_TOKEN}
   protocol: https
 EOF
-$ git config --global hub.protocol https
+$ git config --global hub.protocol https #change global configuration communication protocol for https, tell the command to read from only that location 
 ```
 
 ```sh
 $ mkdir projects/lab02 && cd projects/lab02
-$ git init
+$ git init # create an empty Git repository or reinitialize an existing one
+Initialized empty Git repository in /home/ilya/Documents/acro/ilvivl/workspace/projects/lab02/.git/
 $ git config --global user.name ${GITHUB_USERNAME}
 $ git config --global user.email ${GITHUB_EMAIL}
 # check your git global settings
 $ git config -e --global
-$ git remote add origin https://github.com/${GITHUB_USERNAME}/lab02.git
-$ git pull origin master
-$ touch README.md
-$ git status
-$ git add README.md
-$ git commit -m"added README.md"
-$ git push origin master
+[hub]
+        protocol = https
+[user]
+        name = ilvivl
+        email = vinogradov.iv@phystech.edu
+$ git remote add origin https://github.com/${GITHUB_USERNAME}/lab02.git #adds a remote repository
+$ git pull origin master #fetch from and integrate with another repository or a local branch
+From https://github.com/ilvivl/lab02
+ * branch            master     -> FETCH_HEAD
+ * [new branch]      master     -> origin/master
+$ touch README.md #change file timestamps
+$ git status #show the working tree status
+On branch master
+nothing to commit, working tree clean
+$ git add README.md #add file contents to the index
+$ git commit -m"added README.md" #record changes to the repository
+On branch master
+Untracked files:
+	ter
+
+nothing added to commit but untracked files present
+$ git push origin master #update remote refs along with associated objects
+Username for 'https://github.com': ilvivl
+Password for 'https://ilvivl@github.com': 
+Everything up-to-date
 ```
 
 Добавить на сервисе **GitHub** в репозитории **lab02** файл **.gitignore**
