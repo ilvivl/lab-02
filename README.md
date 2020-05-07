@@ -93,6 +93,27 @@ From https://github.com/ilvivl/lab02
 Already up to date.
 ilya@ilya-laptop:~/D
 $ git log
+commit af8687b21746c774d987f07e8d89e3c9a3f821c2 (HEAD -> master, origin/master)
+Author: rusdevops <rusdevops@gmail.com>
+Date:   Fri Apr 10 14:14:56 2020 +0300
+
+    Update README.md
+
+commit 4162a0f6677e33bf76de5a06cad3385f35ccde43
+Author: rusdevops <rusdevops@gmail.com>
+Date:   Fri Apr 10 14:14:39 2020 +0300
+
+    Update README.md
+
+commit 7542e7739792b8fcd0dbdfed0e45eb6d7a36c5f8
+Author: rusdevops <rusdevops@gmail.com>
+Date:   Fri Apr 10 13:46:51 2020 +0300
+
+    Update README.md
+
+commit 2a8a860ea41d9c2c7016cd97d7be44dbd7e2bee0
+Author: rusdevops <rusdevops@gmail.com>
+Date:   Fri Apr 10 13:27:26 2020 +0300
 ```
 
 ```sh
@@ -156,9 +177,37 @@ $ edit README.md
 
 ```sh
 $ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	examples/
+	include/
+	sources/
+	ter
+
+nothing added to commit but untracked files present (use "git add" to track)
 $ git add .
 $ git commit -m"added sources"
+[master 1533de7] added sources
+ 5 files changed, 268 insertions(+)
+ create mode 100644 examples/example1.cpp
+ create mode 100644 examples/example2.cpp
+ create mode 100644 include/print.hpp
+ create mode 100644 sources/print.cpp
+ create mode 100644 ter
 $ git push origin master
+Username for 'https://github.com': ilvivl
+Password for 'https://ilvivl@github.com': 
+Enumerating objects: 11, done.
+Counting objects: 100% (11/11), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (10/10), 4.50 KiB | 768.00 KiB/s, done.
+Total 10 (delta 0), reused 0 (delta 0)
+To https://github.com/ilvivl/lab02.git
+   af8687b..1533de7  master -> master
+
 ```
 
 ## Report
@@ -167,6 +216,10 @@ $ git push origin master
 $ cd ~/workspace/
 $ export LAB_NUMBER=02
 $ git clone https://github.com/tp-labs/lab${LAB_NUMBER}.git tasks/lab${LAB_NUMBER}
+Cloning into 'tasks/lab02'...
+remote: Enumerating objects: 93, done.
+remote: Total 93 (delta 0), reused 0 (delta 0), pack-reused 93
+Unpacking objects: 100% (93/93), done.
 $ mkdir reports/lab${LAB_NUMBER}
 $ cp tasks/lab${LAB_NUMBER}/README.md reports/lab${LAB_NUMBER}/REPORT.md
 $ cd reports/lab${LAB_NUMBER}
